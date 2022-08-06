@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bg-login {
+  background-color: #363740;
+}
+
+.unText {
+  text-decoration: unset;
+  color: white;
+}
+
+.form-login {
+  margin: 200px 380px;
+}
+
+.form-login .img-login {
+  width: 192px;
+  height: 150px;
+}
+
+.form-login .form-input {
+  margin: 0 50px;
+}
+
+.form-login .form-input .text-label {
+  color: #9fa2b4;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.form-login .text-login a {
+  color: #252733;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-login .text-forgot {
+  font-size: 16px;
+  color: #252733;
+
+  /* font-weight: bold; */
+}
+
+.form-login .form-input .btn-width {
+  width: 400px;
+  height: 40px;
+
+  background-color: #3751ff;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.form-input .sign-up {
+  color: #3751ff;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết hóa đơn</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+              <div class="sidebar-header">
+                <img
+                  style="width: 100px; height: 100px"
+                  src="assets/images/Wallet.png"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+              <div class="sidebar-menu">
+                <ul class="menu">
+                  <li class="sidebar-title">
+                    <a href="overview" class="sidebar-link">
+                      <span>OverView</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item ">
+                    <a href="qltkdoitac" class="sidebar-link">
+                      <span>Quản Lý đối tác</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item ">
+                    <a href="studentlist" class="sidebar-link">
+                      <span>Quản Lý sinh viên</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item active">
+                    <a href="orderlist" class="sidebar-link">
+                      <span>Quản lí hóa đơn</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="history" class="sidebar-link">
+                      <span>Quản lí lịch sử giao dịch</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item has-sub">
+                    <a href="" class="sidebar-link">
+                      <span>Quản lí tiền </span>
+                    </a>
+                    <ul class="submenu">
+                      <li>
+                        <a href="naptien">Nạp tiền</a>
+                      </li>
+                      <li>
+                        <a href="hoadonruttien">Rút tiền</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <button class="sidebar-toggler btn x">
+                <i data-feather="x"></i>
+              </button>
+            </div>
+          </div>
+          <div id="main">
+            <nav class="navbar navbar-header navbar-expand navbar-light">
+                <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+                <button class="btn navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown"
+                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="avatar mr-1">
+                                    <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                </div>
+                                <div class="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="main-content container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Chi tiết hóa đơn:</h4>
+                            <h6>MSSV:197PM31185</h6>
+                        </div>
+                       
+                    </div>
+
+
+        </div>
+        <table class="table" style="border: 1px solid #DDDDDD;">
+            <tr>
+                <th class="text-center">Ngày tháng</th>
+                <th>Thời gian</th>
+                <th>Nguồn tiền</th>
+                <th>Phí giao dịch</th>
+                <th>Dịch vụ</th>
+                <th>Mã hóa đơn</th>
+                <th>Tên cửa hàng</th>
+                <th>Mô tả</th>
+            </tr>
+            <tr>
+              <th class="text-center">10/06/2022</th>
+              <th>18:29</th>
+              <th>Ví VLU</th>
+              <th>20.000</th>
+              <th>Kiosk18</th>
+              <th>VLU0123456789</th>
+              <th>Cafe Bệt</th>
+              <th>Thanh toán cho Cafe Bệt - Kiosk</th>
+            </tr>
+
+            <tr>
+              <th class="text-center">09/06/2022</th>
+              <th>13:15</th>
+              <th>Ví VLU</th>
+              <th>50.000</th>
+              <th>Kiosk18</th>
+              <th>VLU0632574189</th>
+              <th>Cafe Bệt</th>
+              <th>Thanh toán cho Cafe Bệt - Kiosk</th>
+            </tr>
+
+            <tr>
+              <th class="text-center">09/06/2022</th>
+              <th>9:15</th>
+              <th>Ví VLU</th>
+              <th>117.000</th>
+              <th>Kiosk18</th>
+              <th>VLU0852974631</th>
+              <th>Cafe Bệt</th>
+              <th>Thanh toán cho Cafe Bệt - Kiosk</th>
+            </tr>
+
+            <tr>
+              <th class="text-center">08/06/2022</th>
+              <th>8:49</th>
+              <th>Ví VLU</th>
+              <th>81.000</th>
+              <th>Kiosk18</th>
+              <th>VLU1360298547</th>
+              <th>Cafe Bệt</th>
+              <th>Thanh toán cho Cafe Bệt - Kiosk</th>
+            </tr>
+
+            <tr>
+              <th class="text-center">05/06/2022</th>
+              <th>21:33</th>
+              <th>Ví VLU</th>
+              <th>111.000</th>
+              <th>Kiosk18</th>
+              <th>VLU6012534987</th>
+              <th>Quán ăn vặt VLU</th>
+              <th>Thanh toán cho Quán ăn vặt VLU - Kiosk</th>
+            </tr>
+
+            <tr>
+              <th class="text-center">05/06/2022</th>
+              <th>12:00</th>
+              <th>Ví VLU</th>
+              <th>60.000</th>
+              <th>Kiosk18</th>
+              <th>VLU4986320157</th>
+              <th>Nhà sách VLU</th>
+              <th>Thanh toán cho Nhà sách VLU - Kiosk</th>
+            </tr>
+
+            <tr>
+              <th class="text-center">03/06/2022</th>
+              <th>10:33</th>
+              <th>Ví VLU</th>
+              <th>66.000</th>
+              <th>Kiosk18</th>
+              <th>VLU5021789634</th>
+              <th>Cafe Bệt</th>
+              <th>Thanh toán cho Cafe Bệt - Kiosk</th>
+            </tr>
+            
+</body>
+</html>

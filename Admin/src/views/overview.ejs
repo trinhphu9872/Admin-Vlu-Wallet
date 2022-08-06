@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VLTech - Admin</title>
+        
+        <link rel="stylesheet" href="/assets/css/bootstrap.css">
+        
+        <link rel="stylesheet" href="/assets/css/atlantis.min.css">
+    
+        <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" href="/assets/css/app.css">
+ 
+    </head>
+
+<body>
+
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+              <div class="sidebar-header">
+                <img
+                  style="width: 100px; height: 100px"
+                  src="/assets/images/Wallet.png"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+              <div class="sidebar-menu">
+                <ul class="menu">
+                  <li class="sidebar-title active">
+                    <a href="overview" class="sidebar-link">
+                      <span>OverView</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="/partner/qltkdoitac" class="sidebar-link">
+                      <span>Quản Lý đối tác</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="/user/studentlist" class="sidebar-link">
+                      <span>Quản Lý sinh viên</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="/history/listhistory" class="sidebar-link">
+                      <span>Xem lịch sử giao dịch</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item has-sub">
+                    <a href="" class="sidebar-link">
+                      <span>Quản lí tiền</span>
+                    </a>
+                    <ul class="submenu">
+                      <li>
+                        <a href="/user/listuser">Nạp tiền</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <button class="sidebar-toggler btn x">
+                <i data-feather="x"></i>
+              </button>
+            </div>
+          </div>
+        <div id="main">
+          <form action="logout" method="get">
+            <nav class="navbar navbar-header navbar-expand navbar-light">
+                <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+                <button class="btn navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown"
+                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="avatar mr-1">
+                                    <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                </div>
+                                <div class="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" ><i data-feather="log-out"></i> Logout</but>
+                            </div>
+                          </form>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="main-content container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Overview</h2>
+                            <section class="section">
+                              <div class="row mb-2">
+                                <div class="col col-12 col-md-4">
+                                  <div class="card card-statistic">
+                                    <div class="card-body p-0">
+                            
+                                      <div class="d-flex flex-column">
+                                        <div class='px-0 py-1 d-flex justify-content-center'>
+                                          <h3 class='card-title'>Số người dùng</h3>
+                                        </div>
+                                        <div class='px-1 py-1 d-flex justify-content-center'>
+                                          <h3 class='card-title'>  
+                                            <%=countUser %>
+                                          </h3>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            
+                                </div>
+                                <div class="col col-12 col-md-4">
+                                  <div class="card card-statistic active">
+                                    <div class="card-body p-0">
+                                      <div class="d-flex flex-column">
+                                        <div class='px-0 py-1 d-flex justify-content-center'>
+                                          <h3 class='card-title active'>Bên cộng tác</h3>
+                                        </div>
+                                        <div class='px-1 py-1 d-flex justify-content-center'>
+                                          <h3 class='card-title active'>
+                                          
+                                            <%=countCabolator%>
+                                          
+                                          </h3>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row mb-2">
+                                <div class="col col-12 col-lg-7">
+                                  <div class="card card-statistic">
+                                    <div class="card-body">
+                                      <div class="card-title">Thống kê sử dụng dịch vụ</div>
+                                    </div>
+                                    <div class="card-body">
+                                      <div class="chart-container">
+                                        <canvas id="htmlLegendsChart"></canvas>
+                                      </div>
+                                      <div id="myChartLegend"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col col-12 col-lg-5">
+                                  <div class="card card-statistic">
+                                    <div class="card-body">
+                                      <div class="card-title">Tổng thu nhập và chi phí (VNĐ)</div>
+                                      <div class="row py-3">
+                                        <div class="col-md-4 d-flex flex-column justify-content-around">
+                                          <div>
+                                            <h6 class="fw-bold text-uppercase text-success op-8">Thu nhập</h6>
+                                            <h3 class="fw-bold">9.090.909</h3>
+                                          </div>
+                                          <div>
+                                            <h6 class="fw-bold text-uppercase text-danger op-8">Chi phí</h6>
+                                            <h3 class="fw-bold">2.020.202</h3>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                          <div id="chart-container">
+                                            <canvas id="totalIncomeChart"></canvas>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                              </div>
+                            </section>
+                        </div>
+
+                </section>
+            </div>
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+            
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thông tin sinh viên</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body row">
+                            <div class="col-4 ">
+                                <img class="imgProfile" src="./assets/images/Wallet.png" alt="">
+                            </div>
+                            <div class="col-6 m-4">
+                                <p style="font-weight:bold">Mã Số Sinh Viên : <span>197pm09495</span></p> 
+                                <p style="font-weight:bold">Văn Lang Mail : <span>phu.197pm09495@vanlanguni.vn</span></p> 
+                                <p style="font-weight:bold">Tên Sinh Viên : <span>Trịnh Ngọc Phú </span></p> 
+                                <p style="font-weight:bold">Số Tiền Hiện Có : <span>999999 VluCoin </span></p> 
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary">Lưu</button>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            <div>
+              <figure class="highcharts-figure">
+                <div id="container"></div>
+                <p class="highcharts-description">
+                    Pie charts are very popular for showing a compact overview of a
+                    composition or comparison. While they can be harder to read than
+                    column charts, they remain a popular choice for small datasets.
+                </p>
+            </figure>
+            </div>
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                  <div class="float-left">
+                    <p>2022 &copy; SEP team 10</p>
+                  </div>
+                </div>
+              </footer>
+        </div>
+    </div>
+    <script src="assets/js/feather-icons/feather.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/js/vendors.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/atlantis.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    
+    <script>
+        var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
+
+        var mytotalIncomeChart = new Chart(totalIncomeChart, {
+          type: 'bar',
+          data: {
+            labels: ["Giữ xe", "Ăn uống"],
+            datasets: [{
+              label: "Total Income",
+              backgroundColor: '#ff9e27',
+              borderColor: 'rgb(23, 125, 255)',
+              data: [2, 9,  0],
+            }],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+              display: false,
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  display: false //this will remove only the label
+                },
+                gridLines: {
+                  drawBorder: false,
+                  display: false
+                }
+              }],
+              xAxes: [{
+                gridLines: {
+                  drawBorder: false,
+                  display: false
+                }
+              }]
+            },
+          }
+        });
+
+        var htmlLegendsChart = document.getElementById('htmlLegendsChart').getContext('2d');
+
+        var gradientStroke = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientStroke.addColorStop(0, '#177dff');
+		gradientStroke.addColorStop(1, '#80b6f4');
+
+		var gradientFill = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientFill.addColorStop(0, "rgba(23, 125, 255, 0.7)");
+		gradientFill.addColorStop(1, "rgba(128, 182, 244, 0.3)");
+
+		var gradientStroke2 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientStroke2.addColorStop(0, '#f3545d');
+		gradientStroke2.addColorStop(1, '#ff8990');
+
+		var gradientFill2 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientFill2.addColorStop(0, "rgba(243, 84, 93, 0.7)");
+		gradientFill2.addColorStop(1, "rgba(255, 137, 144, 0.3)");
+
+		var gradientStroke3 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientStroke3.addColorStop(0, '#fdaf4b');
+		gradientStroke3.addColorStop(1, '#ffc478');
+
+		var gradientFill3 = htmlLegendsChart.createLinearGradient(500, 0, 100, 0);
+		gradientFill3.addColorStop(0, "rgba(253, 175, 75, 0.7)");
+		gradientFill3.addColorStop(1, "rgba(255, 196, 120, 0.3)");
+
+		var myHtmlLegendsChart = new Chart(htmlLegendsChart, {
+			type: 'line',
+			data: {
+				labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+				datasets: [ {
+					label: "Giữ xe",
+					borderColor: gradientStroke2,
+					pointBackgroundColor: gradientStroke2,
+					pointRadius: 0,
+					backgroundColor: gradientFill2,
+					legendColor: '#f3545d',
+					fill: true,
+					borderWidth: 1,
+					data: [15, 28, 30, 25, 26, 30, 24, 28, 25, 29, 30, 30]
+				}, {
+					label: "Ăn uống",
+					borderColor: gradientStroke,
+					pointBackgroundColor: gradientStroke,
+					pointRadius: 0,
+					backgroundColor: gradientFill,
+					legendColor: '#177dff',
+					fill: true,
+					borderWidth: 1,
+					data: [27, 28, 29, 30, 27, 28, 25, 26, 28, 30, 29, 28]
+				}]
+			},
+			options : {
+				responsive: true, 
+				maintainAspectRatio: false,
+				legend: {
+					display: false
+				},
+				tooltips: {
+					bodySpacing: 4,
+					mode:"nearest",
+					intersect: 0,
+					position:"nearest",
+					xPadding:10,
+					yPadding:10,
+					caretPadding:10
+				},
+				layout:{
+					padding:{left:15,right:15,top:15,bottom:15}
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							fontColor: "rgba(0,0,0,0.5)",
+							fontStyle: "500",
+							beginAtZero: false,
+							maxTicksLimit: 5,
+							padding: 20
+						},
+						gridLines: {
+							drawTicks: false,
+							display: false
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							zeroLineColor: "transparent"
+						},
+						ticks: {
+							padding: 20,
+							fontColor: "rgba(0,0,0,0.5)",
+							fontStyle: "500"
+						}
+					}]
+				}, 
+				legendCallback: function(chart) { 
+					var text = []; 
+					text.push('<ul class="' + chart.id + '-legend html-legend">'); 
+					for (var i = 0; i < chart.data.datasets.length; i++) { 
+						text.push('<li><span style="background-color:' + chart.data.datasets[i].legendColor + '"></span>'); 
+						if (chart.data.datasets[i].label) { 
+							text.push(chart.data.datasets[i].label); 
+						} 
+						text.push('</li>'); 
+					} 
+					text.push('</ul>'); 
+					return text.join(''); 
+				}  
+			}
+		});
+
+    var myLegendContainer = document.getElementById("myChartLegend");
+
+		// generate HTML legend
+		myLegendContainer.innerHTML = myHtmlLegendsChart.generateLegend();
+
+		// bind onClick event to all LI-tags of the legend
+		var legendItems = myLegendContainer.getElementsByTagName('li');
+		for (var i = 0; i < legendItems.length; i += 1) {
+			legendItems[i].addEventListener("click", legendClickCallback, false);
+		}
+    </script>
+    
+</body>
+
+</html>

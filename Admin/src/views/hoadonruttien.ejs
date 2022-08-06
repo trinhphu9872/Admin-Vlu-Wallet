@@ -1,0 +1,279 @@
+im
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VLTech - Admin</title>
+        
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        
+        
+    
+        <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" href="assets/css/app.css">
+ 
+    </head>
+
+<body>
+
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+              <div class="sidebar-header">
+                <img
+                  style="width: 100px; height: 100px"
+                  src="assets/images/Wallet.png"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+              <div class="sidebar-menu">
+                <ul class="menu">
+                  <li class="sidebar-title">
+                    <a href="overview" class="sidebar-link">
+                      <span>OverView</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item ">
+                    <a href="qltkdoitac" class="sidebar-link">
+                      <span>Quản Lý đối tác</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="studentlist" class="sidebar-link">
+                      <span>Quản Lý sinh viên</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="orderlist" class="sidebar-link">
+                      <span>Quản lí hóa đơn</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="history" class="sidebar-link">
+                      <span>Quản lí lịch sử giao dịch</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item has-sub">
+                    <a href="" class="sidebar-link">
+                      <span>Quản lí tiền tiền</span>
+                    </a>
+                    <ul class="submenu">
+                      <li>
+                        <a href="naptien">Nạp tiền</a>
+                      </li>
+                      <li>
+                        <a href="hoadonruttien" class="submenu active">Rút tiền</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <button class="sidebar-toggler btn x">
+                <i data-feather="x"></i>
+              </button>
+            </div>
+          </div>
+        <div id="main">
+            <nav class="navbar navbar-header navbar-expand navbar-light">
+                <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+                <button class="btn navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown"
+                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="avatar mr-1">
+                                    <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                </div>
+                                <div class="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="main-content container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Danh sách hóa đơn rút tiền</h4>
+                        </div>
+                        <div class="card-body">
+                          <div class="py-2 text-right">
+                            <div>
+                              <input type="text" placeholder="Tìm Kiếm..." class="dataTable-input">
+                              <button class="btn btn-primary">Tìm Kiếm</button>
+                            </div>
+                        
+                          </div>
+                          <table class="table" style="border: 1px solid #DDDDDD;">
+                            <tr>
+                              <th>Mã hóa đơn</th>
+                              <th>Mail</th>
+                              <th>Tên sinh viên</th>
+                              <th>Số tiền rút</th>
+                              <th class="text-center">Ngày thực hiện</th>
+                              <th></th>
+                              <th>Trạng thái</th>
+                            </tr>
+                            <tr>
+                              <th>197PM09495</th>
+                              <td>phu.197pm09495@vanlanguni.vn</td>
+                              <td>Trịnh Ngọc Phú</td>
+                              <td>500.000đ</td>
+                              <td class="text-center">10/06/2001</td>
+                              <td><input type="checkbox"></td>
+                              <td>
+                                <a href="#" title="Chi Tiết" data-toggle="modal" data-target="#myModal">
+                                  <div class="btn btn-primary">
+                                    Duyệt
+                                  </div>
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>197PM09495</th>
+                              <td>phu.197pm09495@vanlanguni.vn</td>
+                              <td>Trịnh Ngọc Phú</td>
+                              <td>500.000đ</td>
+                              <td class="text-center">09/06/2001</td>
+                              <td><input id="cb1" type="checkbox" checked></td>
+                              <td>
+                                  <div class="btn btn-primary done">
+                                    Duyệt
+                                  </div>
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>197PM09495</th>
+                              <td>phu.197pm09495@vanlanguni.vn</td>
+                              <td>Trịnh Ngọc Phú</td>
+                              <td>500.000đ</td>
+                              <td class="text-center">03/06/2001</td>
+                              <td><input id="cb1" type="checkbox" checked></td>
+                              <td>
+                                  <div class="btn btn-primary done">
+                                    Duyệt
+                                  </div>
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>197PM09495</th>
+                              <td>phu.197pm09495@vanlanguni.vn</td>
+                              <td>Trịnh Ngọc Phú</td>
+                              <td>500.000đ</td>
+                              <td class="text-center">01/06/2001</td>
+                              <td><input id="cb1" type="checkbox" checked></td>
+                              <td>
+                                  <div class="btn btn-primary done">
+                                    Duyệt
+                                  </div>
+                                </a>
+                              </td>
+                            </tr>
+                            </tbody>
+
+                            </table>
+                            <div class="bottom-table-wrapper d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <div class="dropdown">
+                                        <span>Hiện thị </span>
+                                        <select>
+                                            <option value="5">5</option>
+                                            <option value="100">10</option>
+                                            <option value="100">15</option>
+                                            <option value="100">20</option>
+                                        </select>
+                                        <span> trên 1 trang với 2 kết quả</span>
+                                    </div>
+                                </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination pagination-primary">
+                                        <li class="page-item"><a class="page-link" href="#">
+                                                <span aria-hidden="true"><i
+                                                        data-feather="chevron-left"></i></span>
+                                            </a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">
+                                                <span aria-hidden="true"><i
+                                                        data-feather="chevron-right"></i></span>
+                                            </a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+            
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thông tin hóa đơn</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body row">
+                            <div class="col-4 ">
+                                <img class="imgProfile" src="./assets/images/Wallet.png" alt="">
+                            </div>
+                            <div class="col-6 m-4">
+                                <p style="font-weight:bold">Mã Số Sinh Viên : <span>197pm09495</span></p> 
+                                <p style="font-weight:bold">Văn Lang Mail : <span>phu.197pm09495@vanlanguni.vn</span></p> 
+                                <p style="font-weight:bold">Tên Sinh Viên : <span>Trịnh Ngọc Phú </span></p> 
+                                <p style="font-weight:bold;">Số Tiền Rút: <span style="font-size:25px;"> 500.000đ</span></p> 
+                                <p style="font-weight:bold">Ngày thực hiện: <span>10/06/2001</span></p> 
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary">Xác nhận</button>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                  <div class="float-left">
+                    <p>2022 &copy; SEP team 10</p>
+                  </div>
+                </div>
+              </footer>
+        </div>
+    </div>
+    <script src="assets/js/feather-icons/feather.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/js/vendors.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VLTech - Admin</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="assets/vendors/chartjs/Chart.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <!-- thanh sidebar -->
+      <div id="sidebar" class="active">
+        <div class="sidebar-wrapper active">
+          <div class="sidebar-header">
+            <img
+              style="width: 100px; height: 100px"
+              src="assets/images/Wallet.png"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div class="sidebar-menu">
+            <ul class="menu">
+              <li class="sidebar-title">OverView</li>
+              <li class="sidebar-item active">
+                <a href="" class="sidebar-link">
+                  <span>Quản Lý đối tác nè</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="" class="sidebar-link">
+                  <span>Quản Lý sinh viên</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="" class="sidebar-link">
+                  <span>Xem lịch sử giao dịch</span>
+                </a>
+              </li>
+              <li class="sidebar-item has-sub">
+                <a href="" class="sidebar-link">
+                  <span>Quản lí tiền tiền</span>
+                </a>
+                <ul class="submenu">
+                  <li>
+                    <a href="">Nạp tiền</a>
+                  </li>
+                  <!-- <li>
+                    <a href="">Rút tiền</a>
+                  </li> -->
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <button class="sidebar-toggler btn x">
+            <i data-feather="x"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Nội dung chính -->
+      <div id="main">
+        <nav class="navbar navbar-header navbar-expand navbar-light">
+          <a class="sidebar-toggler" href="#"
+            ><span class="navbar-toggler-icon"></span
+          ></a>
+          <button
+            class="btn navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+<!-- User Profile  -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav d-flex align-items-center navbar-light ml-auto"
+            >
+              <li class="dropdown">
+                <a
+                  href="#"
+                  data-toggle="dropdown"
+                  class="nav-link dropdown-toggle nav-link-lg nav-link-user"
+                >
+                  <div class="avatar mr-1">
+                    <img
+                      src="assets/images/avatar/avatar-s-1.png"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <div class="d-none d-md-block d-lg-inline-block">
+                    Hi, Admin
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#"
+                    ><i data-feather="log-out"></i> Logout</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+<!-- Status bar -->
+        <div id="statusClub" class="main-content container-fluid">
+          <div class="card-header">
+            <h2>OverView</h2>
+          </div>
+          <section class="section">
+            <div class="row mb-2">
+              <div class="col col-12 col-md-4">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                      
+                        <div class="d-flex flex-column">
+                            <div class='px-0 py-1 d-flex justify-content-center'>
+                                <h3 class='card-title'>Số người dùng</h3>
+                            </div>
+                            <div class='px-1 py-1 d-flex justify-content-center'>
+                                <h3 class='card-title'>30</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col col-12 col-md-4">
+            <div class="card card-statistic">
+                <div class="card-body p-0">
+                    <div class="d-flex flex-column">
+                        <div class='px-0 py-1 d-flex justify-content-center'>
+                            <h3 class='card-title'>Bên cộng tác</h3>
+                        </div>
+                        <div class='px-1 py-1 d-flex justify-content-center'>
+                            <h3 class='card-title'>10</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <!-- main  -->
+    <div class="row mb-8">
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="card-header">
+                    <h4>Main</h4>
+                </div>
+                <div class="card-body">
+             
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="card-header">
+                    <h4>main 2</h4>
+                </div>
+                <div class="card-body">
+                   
+                </div>
+            </div>
+        </div>
+            </div>
+          </section>
+        </div>
+<!-- Main -->
+        <div  style="display: none;" class="main-content container-fluid">
+           
+        </div>
+
+
+
+        <footer>
+          <div class="footer clearfix mb-0 text-muted">
+            <div class="float-left">
+              <p>2022 &copy; SEP team 10</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- các thư viện cần thiết -->
+    <script src="assets/js/feather-icons/feather.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      function toggleChart(value) {
+        document.getElementById("statusClub").style.display =
+          value == 1 ? "block" : "none";
+        document.getElementById("dashboardEvent").style.display =
+          value == 2 ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>

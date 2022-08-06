@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VLTech - Admin</title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="/assets/vendors/chartjs/Chart.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/logo.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <!-- thanh sidebar -->
+      <div id="sidebar" class="active">
+        <div class="sidebar-wrapper active">
+          <div class="sidebar-header">
+            <img
+              style="width: 100px; height: 100px"
+              src="/assets/images/Wallet.png"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div class="sidebar-menu">
+            <ul class="menu">
+                <li class="sidebar-title">
+                    <a href="/overview" class="sidebar-link">
+                      <span>OverView</span>
+                    </a>
+                  </li>
+              <li class="sidebar-item active">
+                <a href="/partner/qltkdoitac" class="sidebar-link">
+                  <span>Quản Lý đối tác</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="/user/studentlist" class="sidebar-link">
+                  <span>Quản Lý sinh viên</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="/history/listhistory" class="sidebar-link">
+                  <span>Xem lịch sử giao dịch</span>
+                </a>
+              </li>
+              <li class="sidebar-item has-sub">
+                <a href="" class="sidebar-link">
+                  <span>Quản lí tiền</span>
+                </a>
+                <ul class="submenu">
+                  <li>
+                    <a href="/user/listuser">Nạp tiền</a>
+                  </li>
+                  <!-- <li>
+                    <a href="hoadonruttien">Rút tiền</a>
+                  </li> -->
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <button class="sidebar-toggler btn x">
+            <i data-feather="x"></i>
+          </button>
+        </div>
+      </div>
+      <!-- doi xiu vo nhanh ha copy ra chu satng h merge het mẹ 4 tieng khổ vl tui copy từ nhánh hạ á chu h merge loi -->
+      <div id="main">
+        <form action="/logout" method="get">
+          <nav class="navbar navbar-header navbar-expand navbar-light">
+              <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+              <button class="btn navbar-toggler" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                      <li class="dropdown">
+                          <a href="#" data-toggle="dropdown"
+                              class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                              <div class="avatar mr-1">
+                                  <img src="/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                              </div>
+                              <div class="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right">
+                              <button class="dropdown-item" ><i data-feather="log-out"></i> Logout</but>
+                          </div>
+                        </form>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+
+        <div class="main-content container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-6 order-md-1 order-last">
+                    </div>
+                </div>
+            </div>
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Danh sách đối tác</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="py-2 text-right">
+                            <div >
+                                <input  type="text" placeholder="Tìm Kiếm..." class="dataTable-input">
+                                <button class="btn btn-primary">Tìm Kiếm</button>
+                                <td>
+                                    <a href="/partner/getcreatenewpartner"  title="Thêm Đối Tác" data-toggle="modal">
+                                        <div class="btn btn-primary" style="background-color: #4ac34a; border-color: #b5afba">
+                                            Thêm Đối Tác
+                                        </div>
+                                    </a>
+                                </td>
+                            </div>
+                            
+                            </div>
+                        <table class="table" style="border: 1px solid #DDDDDD;">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center">Mail</th>
+                                <th style="text-align:center">Tên đối tác</th>
+                                <th style="text-align:center" class="text-center">Ngày tạo</th>
+                                <th style="text-align:center">Chi tiết</th>
+                                <th style="text-align:center">Xóa</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                                <% for(let i=0; i < dataUser.length; i++) {%>
+                                    <tr>
+                                      <td style="text-align:center" font-style: normal>
+                                        <%= dataUser[i].email %>
+                                      </td>
+                                      <td style="text-align:center" font-style: normal>
+                                        <%= dataUser[i].username %>
+                                      </td>
+                                      <td  style="text-align:center" font-style: normal>
+                                        <%= dataUser[i].ngayTao %> 
+                                      </td>
+                                      <td  style="text-align:center" font-style: normal>
+                                        <a href="/partner/detail/<%=dataUser[i].id%>" title="Chi Tiết" data-toggle="modal">
+                                          <div class="btn btn-primary">
+                                           Chi tiết
+                                          </div>
+                                        </a>
+                                      </td>
+                                      <td style="text-align:center" font-style: normal>
+                                        <a href="/partner/get-remove/<%=dataUser[i].id%>" title="Xóa" data-toggle="modal">
+                                            <div class="btn btn-primary" style="background-color: #c51111; border-color: #b5afba">
+                                              Xóa
+                                            </div>
+                                          </a>
+                                      </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                        <div class="bottom-table-wrapper d-flex justify-content-between">
+                            <div class="d-flex">
+                                <div class="dropdown">
+                                    <span>Hiện thị </span>
+                                    <select>
+                                        <option value="5">5</option>
+                                        <option value="100">10</option>
+                                        <option value="100">15</option>
+                                        <option value="100">20</option>
+                                    </select>
+                                    <span> trên 1 trang với 2 kết quả</span>
+                                </div>
+                            </div>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination pagination-primary">
+                                    <li class="page-item"><a class="page-link" href="#">
+                                            <span aria-hidden="true"><i
+                                                    data-feather="chevron-left"></i></span>
+                                        </a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">
+                                            <span aria-hidden="true"><i
+                                                    data-feather="chevron-right"></i></span>
+                                        </a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+<!--------------------------------------------------------------------------------------------------------------------->
+        <footer>
+            <div class="footer clearfix mb-0 text-muted">
+              <div class="float-left">
+                <p>2022 &copy; SEP team 10</p>
+              </div>
+            </div>
+          </footer>
+    </div>
+    </div>
+    <!-- các thư viện cần thiết -->
+    <script src="/assets/js/feather-icons/feather.min.js"></script>
+    <script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/main.js"></script>
+     <!-- database -->
+   
+    <script>
+      function toggleChart(value) {
+        document.getElementById("statusClub").style.display =
+          value == 1 ? "block" : "none";
+        document.getElementById("dashboardEvent").style.display =
+          value == 2 ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>
