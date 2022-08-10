@@ -1,174 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VLTech - Admin</title>
 
-    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website quản lí E-Wallet</title>
 
-    <link rel="stylesheet" href="/assets/vendors/chartjs/Chart.min.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" />
 
-    <link
-      rel="stylesheet"
-      href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css"
-    />
-    <link rel="stylesheet" href="/assets/css/app.css" />
-    <link
-      rel="shortcut icon"
-      href="/assets/images/logo.png"
-      type="image/x-icon"
-    />
-  </head>
-  <body>
-    <div id="app">
-      <!-- thanh sidebar -->
-      <div id="sidebar" class="active">
-        <div class="sidebar-wrapper active">
-          <div class="sidebar-header">
-            <img
-              style="width: 100px; height: 100px"
-              src="/assets/images/Wallet.png"
-              alt=""
-              srcset=""
-            />
-          </div>
-          <div class="sidebar-menu">
-            <ul class="menu">
-                <li class="sidebar-title">
-                    <a href="/overview" class="sidebar-link">
-                      <span>OverView</span>
-                    </a>
-                  </li>
-              <li class="sidebar-item active">
-                <a href="/partner/qltkdoitac" class="sidebar-link">
-                  <span>Quản Lý đối tác</span>
-                </a>
-              </li>
-              <li class="sidebar-item">
-                <a href="/user/studentlist" class="sidebar-link">
-                  <span>Quản Lý sinh viên</span>
-                </a>
-              </li>
-              <li class="sidebar-item">
+  <link rel="stylesheet" href="/assets/vendors/chartjs/Chart.min.css" />
+
+  <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="/assets/css/app.css" />
+  <link rel="shortcut icon" href="/assets/images/Wallet.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- thanh sidebar -->
+    <div id="sidebar" class="active">
+      <div class="sidebar-wrapper active">
+        <div class="sidebar-header">
+          <img style="width: 100px; height: 100px" src="/assets/images/Wallet.png" alt="" srcset="" />
+        </div>
+        <div class="sidebar-menu">
+          <ul class="menu">
+            <li class="sidebar-title">
+              <a href="/overview" class="sidebar-link">
+                <span>OverView</span>
+              </a>
+            </li>
+            <li class="sidebar-item active">
+              <a href="/partner/qltkdoitac" class="sidebar-link">
+                <span>Quản Lý đối tác</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="/user/studentlist" class="sidebar-link">
+                <span>Quản Lý sinh viên</span>
+              </a>
+            </li>
+            <!-- <li class="sidebar-item">
                 <a href="/history/listhistory" class="sidebar-link">
                   <span>Xem lịch sử giao dịch</span>
                 </a>
-              </li>
-              <li class="sidebar-item has-sub">
-                <a href="" class="sidebar-link">
-                  <span>Quản lí tiền</span>
-                </a>
-                <ul class="submenu">
-                  <li>
-                    <a href="/user/listuser">Nạp tiền</a>
-                  </li>
-                  <!-- <li>
+              </li> -->
+            <li class="sidebar-item has-sub">
+              <a href="" class="sidebar-link">
+                <span>Quản lí tiền</span>
+              </a>
+              <ul class="submenu">
+                <li>
+                  <a href="/user/listuser">Nạp tiền</a>
+                </li>
+                <!-- <li>
                     <a href="hoadonruttien">Rút tiền</a>
                   </li> -->
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <button class="sidebar-toggler btn x">
-            <i data-feather="x"></i>
-          </button>
+              </ul>
+            </li>
+          </ul>
         </div>
+        <button class="sidebar-toggler btn x">
+          <i data-feather="x"></i>
+        </button>
       </div>
-      <!-- Nội dung chính -->
-      <div id="main">
-        <form action="/logout" method="get">
-          <nav class="navbar navbar-header navbar-expand navbar-light">
-              <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
-              <button class="btn navbar-toggler" type="button" data-toggle="collapse"
-                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
-                      <li class="dropdown">
-                          <a href="#" data-toggle="dropdown"
-                              class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                              <div class="avatar mr-1">
-                                  <img src="/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
-                              </div>
-                              <div class="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
-                          </a>
-                          <div class="dropdown-menu dropdown-menu-right">
-                              <button class="dropdown-item" ><i data-feather="log-out"></i> Logout</but>
-                          </div>
-                        </form>
-                      </li>
-                  </ul>
-              </div>
-          </nav>
-        <section class="section">
-          <div class="card">
-              <div class="card-header">
-                  <h4>Thông Tin Đối Tác</h4>
-              </div>
-              <div class="card-body">
-                <form action="/partner/post-remove-partner" method="POST">
-                  <div>
-                      
-                    <% for(let i=0; i < dataUser.length; i++) {%>
-                      <div class="modal-body row">
-                        <input type="text" class="form-control" 
-                        name="id" style="display:none" 
-                        value="<%= dataUser[i].id %>" />
-                        <label name="username" style="font-weight:bold;
-                                          font-family:'Times New Roman', Times, serif; font-size: 25px;">Tên Đối Tác :</label>
-                        <input type="text" readonly class="form-control"
-                            name="username" style="font-family:'Times New Roman', Times, serif" 
-                            value="<%= dataUser[i].username %>" />
-                        <label style="font-weight:bold;
+    </div>
+    <!-- Nội dung chính -->
+    <div id="main">
+      <form action="/logout" method="get">
+        <nav class="navbar navbar-header navbar-expand navbar-light">
+          <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+          <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                  <div class="avatar mr-1">
+                    <img src="/assets/images/Wallet.png" alt="" srcset="">
+                  </div>
+                  <div class="d-none d-md-block d-lg-inline-block">Xin Chảo Team 10</div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <button class="dropdown-item"><i data-feather="log-out"></i>Đăng xuất</but>
+                </div>
+      </form>
+      </li>
+      </ul>
+    </div>
+    </nav>
+    <section class="section">
+      <div class="card">
+        <div class="card-header">
+          <h4>Thông Tin Đối Tác</h4>
+        </div>
+        <div class="card-body">
+          <form action="/partner/post-remove-partner" method="POST">
+            <div>
+
+              <% for(let i=0; i < dataUser.length; i++) {%>
+                <div class="modal-body row">
+                  <input type="text" class="form-control" name="id" style="display:none"
+                    value="<%= dataUser[i].id %>" />
+                  <label name="username" style="font-weight:bold;
+                                          font-family:'Times New Roman', Times, serif; font-size: 25px;">Tên Đối Tác
+                    :</label>
+                  <input type="text" readonly class="form-control" name="username"
+                    style="font-family:'Times New Roman', Times, serif" value="<%= dataUser[i].username %>" />
+                  <label style="font-weight:bold;
                                           font-family:'Times New Roman', Times, serif; font-size: 25px;">Mail :</label>
-                        <input type="text" readonly class="form-control" 
-                            name="email" style="font-family:'Times New Roman', Times, serif" 
-                            value="<%= dataUser[i].email %>" />
-                        <!-- <label style="font-weight:bold;
+                  <input type="text" readonly class="form-control" name="email"
+                    style="font-family:'Times New Roman', Times, serif" value="<%= dataUser[i].email %>" />
+                  <!-- <label style="font-weight:bold;
                                           font-family:'Times New Roman', Times, serif; font-size: 25px;">Số Tiền Hiện Có :</label>
                         <input type="text" readonly class="form-control" 
                             name="soDu" style="font-family:'Times New Roman', Times, serif" 
                             value="<%= dataUser[i].soDu %>" /> -->
-                      </div>
-                      <% } %>
-                        <div class="modal-footer">
-                          <button type="submit" title="Xóa" class="btn btn-danger" id="add-user-btn">Xóa</button>
-                          <a href="/partner/qltkdoitac" class="btn btn-default" data-dismiss="modal">Trở về</a>
-                        </div>
-                </form>
                 </div>
-              </div>
-              </div>
-          </div>
-      </section>
+                <% } %>
+                  <div class="modal-footer">
+                    <button type="submit" title="Xóa" class="btn btn-danger" id="add-user-btn">Xóa</button>
+                    <a href="/partner/qltkdoitac" class="btn btn-default" data-dismiss="modal">Trở về</a>
+                  </div>
+          </form>
+        </div>
+      </div>
   </div>
-<!--------------------------------------------------------------------------------------------------------------------->
-        <footer>
-            <div class="footer clearfix mb-0 text-muted">
-              <div class="float-left">
-                <p>2022 &copy; SEP team 10</p>
-              </div>
-            </div>
-          </footer>
+  </div>
+  </section>
+  </div>
+  <!--------------------------------------------------------------------------------------------------------------------->
+  <footer>
+    <div class="footer clearfix mb-0 text-muted">
+      <div class="float-left">
+        <p>2022 &copy; SEP team 10</p>
+      </div>
     </div>
-    </div>
-    <!-- các thư viện cần thiết -->
-    <script src="/assets/js/feather-icons/feather.min.js"></script>
-    <script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/main.js"></script>
-     <!-- database -->
-   
-    <script>
-      function toggleChart(value) {
-        document.getElementById("statusClub").style.display =
-          value == 1 ? "block" : "none";
-        document.getElementById("dashboardEvent").style.display =
-          value == 2 ? "block" : "none";
-      }
-    </script>
-  </body>
+  </footer>
+  </div>
+  </div>
+  <!-- các thư viện cần thiết -->
+  <script src="/assets/js/feather-icons/feather.min.js"></script>
+  <script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <!-- database -->
+
+  <script>
+    function toggleChart(value) {
+      document.getElementById("statusClub").style.display =
+        value == 1 ? "block" : "none";
+      document.getElementById("dashboardEvent").style.display =
+        value == 2 ? "block" : "none";
+    }
+  </script>
+</body>
+
 </html>

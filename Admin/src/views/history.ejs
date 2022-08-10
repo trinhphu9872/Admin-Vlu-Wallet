@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VLTech - Admin</title>
-
-  <link rel="stylesheet" href="/assets/css/bootstrap.css" />
-
-  <link rel="stylesheet" href="/assets/vendors/chartjs/Chart.min.css" />
-
-  <link
-    rel="stylesheet"
-    href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css"
-  />
-  <link rel="stylesheet" href="/assets/css/app.css" />
-  <link
-    rel="shortcut icon"
-    href="/assets/images/logo.png"
-    type="image/x-icon"
-  />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Website quản lí E-Wallet</title>
+      
+        <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+      
+        <link rel="stylesheet" href="/assets/vendors/chartjs/Chart.min.css" />
+      
+        <link
+          rel="stylesheet"
+          href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css"
+        />
+        <link rel="stylesheet" href="/assets/css/app.css" />
+        <link
+          rel="shortcut icon"
+          href="/assets/images/Wallet.png"
+          type="image/x-icon"
+        />
+      </head>
 <body>
   <div id="app">
     <div id="sidebar" class="active">
@@ -49,11 +49,11 @@
                   <span>Quản Lý sinh viên</span>
                 </a>
               </li>
-              <li class="sidebar-item active">
+            <!-- <li class="sidebar-item active">
                 <a href="/history/listhistory" class="sidebar-link">
-                  <span>Xem lịch sử giao dịch</span>
+                    <span>Xem lịch sử giao dịch</span>
                 </a>
-              </li>
+            </li> -->
               <li class="sidebar-item has-sub">
                 <a href="" class="sidebar-link">
                   <span>Quản lí tiền</span>
@@ -89,12 +89,13 @@
                             <a href="#" data-toggle="dropdown"
                                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <div class="avatar mr-1">
-                                    <img src="/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
-                                </div>
-                                <div class="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
+                                    <img src="/assets/images/Wallet.png" alt="" srcset="">
+                                  </div>
+                                     <div class="d-none d-md-block d-lg-inline-block">Xin Chảo Team 10</div>
+                                  
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" ><i data-feather="log-out"></i> Logout</but>
+                                <button class="dropdown-item" ><i data-feather="log-out"></i>Đăng xuất</but>
                             </div>
                           </form>
                         </li>
@@ -196,143 +197,8 @@
             </section>
         </div>
 
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-        
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Chi tiết giao dịch</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body row">
-                        <div class="col-4 ">
-                            <img class="imgProfile" src="./assets/images/avatar/avatar-s-5.png" alt="">
-                        </div>
-                        <div class="col-6 m-4">
-                            <p style="font-weight:bold">Mã Số Sinh Viên : <span>197pm09495</span></p> 
-                            <p style="font-weight:bold">Loại chi tiêu : <span>Nạp tiền</span></p> 
-                            <p style="font-weight:bold">Tên Sinh Viên : <span>Trịnh Ngọc Phú </span></p> 
-                            <p style="font-weight:bold">Số Tiền Hiện Có : <span>1.001.000 VluCoin </span></p> 
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                        <button type="button" class="btn btn-primary">Lưu</button>
-                    </div>
-                </div>      
-            </div>
+             
         </div>
-            <div id="myModal1" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-          
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h4 class="modal-title">Chi tiết giao dịch</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      </div>
-                      <div class="modal-body row">
-                          <div class="col-4 ">
-                              <img class="imgProfile" src="./assets/images/avatar/avatar-s-11.png" alt="">
-                          </div>
-                          <div class="col-6 m-4">
-                              <p style="font-weight:bold">Mã Số Sinh Viên : <span>197pm31185</span></p> 
-                              <p style="font-weight:bold">Loại chi tiêu : <span>Rút tiền</span></p> 
-                              <p style="font-weight:bold">Tên Sinh Viên : <span>Lê Thanh Nhàn </span></p> 
-                              <p style="font-weight:bold">Số Tiền Hiện Có : <span>5.000 VluCoin </span></p> 
-                          </div>
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                          <button type="button" class="btn btn-primary">Lưu</button>
-                      </div>
-                  </div>        
-              </div>
-            </div>
-
-              <div id="myModal2" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-            
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Chi tiết giao dịch</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body row">
-                            <div class="col-4 ">
-                                <img class="imgProfile" src="./assets/images/avatar/avatar-s-1.png" alt="">
-                            </div>
-                            <div class="col-6 m-4">
-                                <p style="font-weight:bold">Mã Số Sinh Viên : <span>197pm14606</span></p> 
-                                <p style="font-weight:bold">Loại chi tiêu : <span>Thanh Toán</span></p> 
-                                <p style="font-weight:bold">Tên Sinh Viên : <span>Tăng Khánh Trung </span></p> 
-                                <p style="font-weight:bold">Số Tiền Hiện Có : <span>47.000 VluCoin </span></p> 
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                            <button type="button" class="btn btn-primary">Lưu</button>
-                        </div>
-                    </div>           
-                </div>
-              </div>
-
-                <div id="myModal3" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-              
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <h4 class="modal-title">Chi tiết giao dịch</h4>
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          </div>
-                          <div class="modal-body row">
-                              <div class="col-4 ">
-                                  <img class="imgProfile" src="./assets/images/avatar/avatar-s-3.png" alt="">
-                              </div>
-                              <div class="col-6 m-4">
-                                  <p style="font-weight:bold">Mã Số Sinh Viên : <span>197pm09438</span></p> 
-                                  <p style="font-weight:bold">Loại chi tiêu : <span>Nạp tiền</span></p> 
-                                  <p style="font-weight:bold">Tên Sinh Viên : <span>Nguyễn Hạ </span></p> 
-                                  <p style="font-weight:bold">Số Tiền Hiện Có : <span>115.000 VluCoin </span></p> 
-                              </div>
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                              <button type="button" class="btn btn-primary">Lưu</button>
-                          </div>
-                      </div>             
-                  </div>
-                </div>
-
-                  <div id="myModal4" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Chi tiết giao dịch</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body row">
-                                <div class="col-4 ">
-                                    <img class="imgProfile" src="./assets/images/avatar/avatar-s-5.png" alt="">
-                                </div>
-                                <div class="col-6 m-4">
-                                    <p style="font-weight:bold">Mã Số Sinh Viên : <span>197pm09495</span></p> 
-                                    <p style="font-weight:bold">Loại chi tiêu : <span>Thanh toán</span></p> 
-                                    <p style="font-weight:bold">Tên Sinh Viên : <span>Trịnh Ngọc Phú </span></p> 
-                                    <p style="font-weight:bold">Số Tiền Hiện Có : <span>1.000 VluCoin </span></p> 
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                                <button type="button" class="btn btn-primary">Lưu</button>
-                            </div>
-                        </div>               
-                    </div>
 
         </div>
         <footer>

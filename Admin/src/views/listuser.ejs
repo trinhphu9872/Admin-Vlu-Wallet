@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VLTech - Admin</title>
-        
-        <link rel="stylesheet" href="/assets/css/bootstrap.css">
-        
-        
-    
-        <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-        <link rel="stylesheet" href="/assets/css/app.css">
- 
-    </head>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website quản lí E-Wallet</title>
+  
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+  
+    <link rel="stylesheet" href="/assets/vendors/chartjs/Chart.min.css" />
+  
+    <link
+      rel="stylesheet"
+      href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <link rel="stylesheet" href="/assets/css/app.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/Wallet.png"
+      type="image/x-icon"
+    />
+  </head>
 
 <body>
 
@@ -45,11 +53,11 @@
                       <span>Quản Lý sinh viên</span>
                     </a>
                   </li>
-                  <li class="sidebar-item">
+                  <!-- <li class="sidebar-item">
                     <a href="/history/listhistory" class="sidebar-link">
                       <span>Xem lịch sử giao dịch</span>
                     </a>
-                  </li>
+                  </li> -->
                   <li class="sidebar-item has-sub">
                     <a href="" class="sidebar-link">
                       <span>Quản lí tiền</span>
@@ -85,12 +93,12 @@
                             <a href="#" data-toggle="dropdown"
                                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <div class="avatar mr-1">
-                                    <img src="/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                  <img src="/assets/images/Wallet.png" alt="" srcset="">
                                 </div>
-                                <div class="d-none d-md-block d-lg-inline-block">Hi, Admin</div>
+                                   <div class="d-none d-md-block d-lg-inline-block">Xin Chảo Team 10</div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" ><i data-feather="log-out"></i> Logout</but>
+                              <button class="dropdown-item" ><i data-feather="log-out"></i>Đăng xuất</but>
                             </div>
                           </form>
                         </li>
@@ -188,37 +196,7 @@
 
                 </section>
             </div>
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Thông tin sinh viên</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <form action="/naptienuser" method="POST">
-                        <div class="modal-body row">
-                            <div class="col-4 ">
-                                <img class="imgProfile" src="./assets/images/Wallet.png" alt="">
-                            </div>
-                            <div class="col-6 m-4">
-                                <p name="mssv" style="font-weight:bold">MSSV : <span>197pm09495</span></p> 
-                                <p style="font-weight:bold">Văn Lang Mail : <span>phu.197pm09495@vanlanguni.vn</span></p> 
-                                <p style="font-weight:bold">Tên Sinh Viên : <span>Trịnh Ngọc Phú </span></p> 
-                                <p style="font-weight:bold">Số Tiền Hiện Có : <span>999.999 VNĐ </span></p>
-                                <p style="font-weight:bold">Số tiền nạp : 
-                                  <span><input type="text" name="money" style="width:100px; height: 30px ;border-color:antiquewhite; border-radius:5px;"></span> VNĐ</p> 
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                            <button type="submit" class="btn btn-primary" id="add-user-btn">Nạp</button>
-                        </div>
-                        </form>
-                    </div>
-            
-                </div>
-            </div>
+
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                   <div class="float-left">
